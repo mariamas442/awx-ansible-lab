@@ -1,0 +1,22 @@
+---
+- name: Print Windows role message
+  debug:
+    msg: "Windows role is working successfully"
+
+- name: Create folder on Windows
+  ansible.windows.win_file:
+    path: C:\AnsibleTest
+    state: directory
+
+- name: Create test file on Windows
+  ansible.windows.win_copy:
+    content: "This file was created by Ansible from Ubuntu."
+    dest: C:\AnsibleTest\ansible_test.txt
+
+- name: Get Windows hostname
+  ansible.windows.win_command: hostname
+  register: windows_hostname
+
+- name: Show Windows hostname
+  debug:
+    var: windows_hostname.stdout

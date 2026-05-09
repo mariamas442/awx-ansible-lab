@@ -1,0 +1,6 @@
+---
+- name: Configure Linux Servers
+  hosts: linux_servers
+
+  roles:
+    - linux_common

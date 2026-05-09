@@ -1,0 +1,11 @@
+---
+- name: Print Linux role message
+  debug:
+    msg: "Linux role is working successfully"
+
+- name: Install nginx on Linux
+  become: yes
+  apt:
+    name: nginx
+    state: present
+    update_cache: yes
