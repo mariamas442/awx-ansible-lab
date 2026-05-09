@@ -8,10 +8,6 @@
     content: "This file was created by Ansible from AWX."
     dest: /tmp/ansible_linux_test.txt
 
-- name: Get Linux hostname
-  command: hostname
-  register: linux_hostname
-
-- name: Show Linux hostname
+- name: Show final success message
   debug:
-    var: linux_hostname.stdout
+    msg: "Linux playbook completed successfully from AWX"
