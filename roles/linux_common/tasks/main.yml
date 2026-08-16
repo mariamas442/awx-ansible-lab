@@ -1,0 +1,14 @@
+---
+- name: Print Linux role message
+  ansible.builtin.debug:
+    msg: "Linux role is working successfully"
+
+- name: Create test file on Linux
+  ansible.builtin.copy:
+    content: "This file was created by Ansible from AWX."
+    dest: /tmp/ansible_linux_test.txt
+    mode: "0644"
+
+- name: Show final success message
+  ansible.builtin.debug:
+    msg: "Linux playbook completed successfully from AWX"

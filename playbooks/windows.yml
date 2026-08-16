@@ -1,0 +1,6 @@
+---
+- name: Configure Windows Servers
+  hosts: windows_servers
+
+  roles:
+    - windows_common
